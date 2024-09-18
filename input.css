@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --body: black;
+  --theme-color: #1f2a30;
+  --input: white;
+  --output: rgb(16, 186, 228);
+  --input-lable-before: black;
+  --input-lable-after: white;
+  --output-text: #ff9900;
+}
+
+#output::-webkit-scrollbar {
+  width: 12px;
+}
+
+#output::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); 
+}
+
+#output::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0);
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
