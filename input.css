@@ -5,10 +5,10 @@
 :root {
   --body: black;
   --theme-color: #1f2a30;
-  --input: white;
-  --output: rgb(16, 186, 228);
-  --input-lable-before: black;
-  --input-lable-after: white;
+  --input-border: white;
+  --output-border: rgb(16, 186, 228);
+  --lable-text: white;
+  --input-text: #ff9900;
   --output-text: #ff9900;
 }
 

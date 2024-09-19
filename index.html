@@ -10,11 +10,11 @@
     <header class="w-[100%] flex justify-center "><img src="image/NUM-WORD3.png" class="w-[60%] lg:w-[30%]" alt=""></header>
     <main class="w-[95%] lg:w-[50%] mt-[50px] gap-[30px] lg:gap-[70px] py-[30px] lg:py-[70px] bg-[--theme-color] flex flex-col items-center">
       <div id="form" class="w-[90%] h-[50px] relative">
-        <input type="text" autocomplete="off" name="input" id="input" placeholder=" " onkeyup="do_it()" class="w-[100%] h-[100%] pl-[1%] peer bg-[--input] outline-none rounded-xl" />
-        <label for="input" class="pointer-events-none absolute -translate-y-1/2 -translate-x-1/2 left-[4.5em] top-[-0.1em] peer-hover:left-[4.5em] peer-hover:top-[-0.1em] peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-[--theme-color] peer-hover:bg-[--theme-color] transition-all peer-placeholder-shown:text-[--input-lable-before] text-[--input-lable-after] peer-hover:text-[--input-lable-after] peer-placeholder-shown:text-base text-sm peer-hover:text-sm px-[0.3em] rounded border-solid peer-placeholder-shown:border-transparent border-t-[2px] border-[--output]">Enter a Number</label>
+        <input type="text" autocomplete="off" name="input" id="input" placeholder=" " onkeyup="do_it()" class="w-[100%] h-[100%] pl-[1%] peer border border-solid border-[--input-border] text-[--input-text] bg-transparent outline-none rounded-xl" />
+        <label for="input" class="pointer-events-none absolute -translate-y-1/2 -translate-x-1/2 left-[4.5em] top-[-0.1em] peer-hover:left-[4.5em] peer-hover:top-[-0.1em] peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-[--theme-color] peer-hover:bg-[--theme-color] transition-all text-[--lable-text] peer-placeholder-shown:text-base text-sm peer-hover:text-sm px-[0.3em] rounded border-solid peer-placeholder-shown:border-transparent border-t-[2px] border-[--output-border]">Enter a Number</label>
         <span id="error" class="invisible text-red-500">Enter a Number</span>
       </div>
-      <div id="output" class="w-[90%] min-h-[45px] p-[1%] border-[2px] border-solid border-[--output] text-[--output-text] flex items-start justify-end text-right hidden"></div>
+      <div id="output" class="w-[90%] h-max p-[1%] border-[2px] border-solid border-[--output-border] text-[--output-text] flex items-start justify-end text-right hidden"></div>
     </main>
     <script src="js.js"></script>
   </body>
