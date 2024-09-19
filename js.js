@@ -42,27 +42,26 @@ function num2word(input) {
     8: "هشتصد",
     9: "نهصد",
   };
-
   let vahed = {
     4: "هزار",
     7: "میلیون",
-    10: "میلیارد",
+    10: "بیلیون",
     13: "تریلیون",
-    16: "کوادریلیون",
+    16: "کوآدریلیون",
     19: "کوینتیلیون",
-    22: "سیکستیلون",
+    22: "سکستیلیون",
     25: "سپتیلیون",
     28: "اکتیلیون",
-    31: "نونیلیون",
+    31: "نانیلیون",
     34: "دسیلیون",
     37: "آندسیلیون",
-    40: "دودسیلیون",
+    40: "دیودسیلیون",
     43: "تریدسیلیون",
-    46: "کواتردسیلیون",
+    46: "کواتیوردسیلیون",
     49: "کویندسیلیون",
-    52: "سیکسدسیلیون",
-    55: "سپتندسیلیون",
-    58: "اکتودسیلیوم",
+    52: "	سکسدسیلیون",
+    55: "سپتدسیلیون",
+    58: "اُکتودسیلیون",
     61: "نومدسیلیون",
   };
   let vahed_turn = 1;
@@ -74,12 +73,22 @@ function num2word(input) {
   while (i <= input.length) {
     if (dic_turn == 4) {
       dic_turn = 1;
-      if (input.slice(input.length - i - 2, input.length - i + 1) > 0 || input.slice(input.length - i - 1, input.length - i + 1) > 0 || input.slice(input.length - i, input.length - i + 1) > 0) {
+      if (
+        input.slice(input.length - i - 2, input.length - i + 1) > 0 ||
+        input.slice(input.length - i - 1, input.length - i + 1) > 0 ||
+        input.slice(input.length - i, input.length - i + 1) > 0
+      ) {
         output.push(vahed[i]);
       }
     }
-    if (dic_turn == 1 && input.slice(input.length - i - 1, input.length - i + 1) > 9 && 20 > input.slice(input.length - i - 1, input.length - i + 1)) {
-      output.push(dic2[input.slice(input.length - i - 1, input.length - i + 1)]);
+    if (
+      dic_turn == 1 &&
+      input.slice(input.length - i - 1, input.length - i + 1) > 9 &&
+      20 > input.slice(input.length - i - 1, input.length - i + 1)
+    ) {
+      output.push(
+        dic2[input.slice(input.length - i - 1, input.length - i + 1)]
+      );
       i += 2;
       dic_turn += 2;
       continue;
@@ -99,9 +108,16 @@ function num2word(input) {
 
   for (let i = 0; i < output.length; i++) {
     output2.push(output[i]);
-    if (i + 1 != output.length && Object.values(vahed).includes(output[i]) && Object.values(vahed).includes(output[i + 1])) {
+    if (
+      i + 1 != output.length &&
+      Object.values(vahed).includes(output[i]) &&
+      Object.values(vahed).includes(output[i + 1])
+    ) {
       output2.push("و");
-    } else if (i + 1 != output.length && !Object.values(vahed).includes(output[i])) {
+    } else if (
+      i + 1 != output.length &&
+      !Object.values(vahed).includes(output[i])
+    ) {
       output2.push("و");
     }
   }
@@ -110,27 +126,18 @@ function num2word(input) {
 }
 
 function do_it() {
-  const reg = /^\d+$/;
   let input = document.getElementById("input");
   let output = document.getElementById("output");
   let error = document.getElementById("error");
-  let is_true = reg.test(input.value);
-
-  if (is_true) {
-    output.classList.remove("hidden")
-    if (input.value.length > 63) {
+  input.value = input.value.replace(/[^0-9]/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  if (input.value.length > 0) {
+    output.classList.remove("hidden");
+    if (input.value.replace(/[^0-9]/g, "").length > 63) {
       output.textContent = "out of range";
     } else {
-      error.classList.add("invisible");
-      output.textContent = num2word(input.value);
+      output.textContent = num2word(input.value.replace(/[^0-9]/g, ""));
     }
-  } else {
-    output.classList.add("hidden")
-    if(input.value.length > 0){
-      error.classList.remove("invisible");
-    }else{
-      error.classList.add("invisible");
-    }
-    input.value = input.value.slice(0, -1);
+  }else{
+    output.classList.add("hidden");
   }
 }
