@@ -117,6 +117,7 @@ function do_it() {
   let is_true = reg.test(input.value);
 
   if (is_true) {
+    output.classList.remove("hidden")
     if (input.value.length > 63) {
       output.textContent = "out of range";
     } else {
@@ -124,11 +125,11 @@ function do_it() {
       output.textContent = num2word(input.value);
     }
   } else {
+    output.classList.add("hidden")
     if(input.value.length > 0){
       error.classList.remove("invisible");
     }else{
       error.classList.add("invisible");
-      output.textContent = ""
     }
     input.value = input.value.slice(0, -1);
   }
