@@ -6,15 +6,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="output.css" />
   </head>
-  <body class="h-[100dvh] flex flex-col justify-start items-center bg-[--body] text-sm md:text-base">
+  <body class="h-[100svh] flex flex-col justify-start items-center bg-[--body] text-sm md:text-base">
     <header class="w-[100%] flex justify-center "><img src="image/NUM-WORD3.png" class="w-[60%] lg:w-[30%]" alt=""></header>
-    <main class="w-[95%] lg:w-[50%] mt-[50px] gap-[30px] lg:gap-[70px] py-[30px] lg:py-[70px] bg-[--theme-color] flex flex-col items-center">
-      <div id="form" class="w-[90%] h-[50px] relative">
-        <input type="text" autocomplete="off" name="input" id="input" placeholder=" " onkeyup="do_it()" class="w-[100%] h-[100%] pl-[1%] peer border border-solid border-[--input-border] text-[--input-text] bg-transparent outline-none rounded-xl" />
-        <label for="input" class="pointer-events-none absolute -translate-y-1/2 -translate-x-1/2 left-[4.5em] top-[-0.1em] peer-hover:left-[4.5em] peer-hover:top-[-0.1em] peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-[--theme-color] peer-hover:bg-[--theme-color] transition-all text-[--lable-text] peer-placeholder-shown:text-base text-sm peer-hover:text-sm px-[0.3em] rounded border-solid peer-placeholder-shown:border-transparent border-t-[2px] border-[--output-border]">Enter a Number</label>
-        <span id="error" class="invisible text-red-500">Enter a Number</span>
+    <main class="w-[100%] lg:w-[50%] h-[150px] relative flex flex-col items-center">
+      <div id="item-1" class="w-full h-full bg-[--theme-color-1] flex flex-col justify-center items-center">
+        <div id="form-1" class="w-[90%] h-[30%] relative">
+          <input type="text" autocomplete="off" name="input" id="input" placeholder=" " onkeyup="do_it()" class="w-[100%] h-[100%] p-[2%] peer border border-solid border-[--input-border] text-[--input-text] bg-transparent outline-none rounded-xl" />
+          <label for="input" class="absolute -translate-y-1/2 -translate-x-1/2 left-[3.1em] top-[-0.1em] bg-[--theme-color-1] text-[--lable-text] text-sm px-[0.3em]">input</label>
+        </div>
       </div>
-      <div id="output" class="w-[90%] h-max p-[1%] border-[2px] border-solid border-[--output-border] text-[--output-text] flex items-start justify-end text-right hidden"></div>
+      <div id="item-2" class="border-t-2 border-solid border-[rgb(16,186,228)] bg-[--theme-color-2] absolute transition-[all_2s_linear] top-0 z-[-1] w-full pt-[20px] flex justify-center items-center">
+        <div id="form-2" class="w-[90%] relative">
+          <div id="output" class="w-full p-[2%] peer border border-solid border-[--output-border] text-[--output-text] bg-transparent outline-none rounded-xl text-right"></div>
+          <label for="output" class="absolute -translate-y-1/2 -translate-x-1/2 left-[3.1em] top-[-0.1em] bg-[--theme-color-2] text-[--lable-text] text-sm px-[0.3em]">output</label>
+        </div>
+      </div>
     </main>
     <script src="js.js"></script>
   </body>

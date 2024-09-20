@@ -127,17 +127,19 @@ function num2word(input) {
 
 function do_it() {
   let input = document.getElementById("input");
+  let item_2 = document.getElementById("item-2");
   let output = document.getElementById("output");
   let error = document.getElementById("error");
   input.value = input.value.replace(/[^0-9]/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   if (input.value.length > 0) {
-    output.classList.remove("hidden");
+    item_2.classList.add("active");
     if (input.value.replace(/[^0-9]/g, "").length > 63) {
       output.textContent = "out of range";
     } else {
       output.textContent = num2word(input.value.replace(/[^0-9]/g, ""));
     }
   }else{
-    output.classList.add("hidden");
+    item_2.classList.remove("active");
+    output.textContent = ""
   }
 }

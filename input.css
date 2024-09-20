@@ -4,9 +4,11 @@
 
 :root {
   --body: black;
-  --theme-color: #1f2a30;
+  --theme-color-1: #1f2a30;
+  --theme-color-2: var(--body);
   --input-border: white;
-  --output-border: rgb(16, 186, 228);
+  /* --output-border: rgb(16, 186, 228); */
+  --output-border:white;
   --lable-text: white;
   --input-text: #ff9900;
   --output-text: #ff9900;
@@ -25,4 +27,8 @@
   border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.active {
+  top: 100%;
 }
