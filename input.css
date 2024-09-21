@@ -4,8 +4,8 @@
 
 :root {
   --body: black;
-  --theme-color-1: #1f2a30;
-  --theme-color-2: var(--body);
+  --theme-color-1: var(--body);
+  --theme-color-2: #1f2a30;
   --input-border: white;
   /* --output-border: rgb(16, 186, 228); */
   --output-border:white;
